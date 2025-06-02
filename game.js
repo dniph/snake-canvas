@@ -32,7 +32,8 @@ function startGame(selectedDifficulty) {
   setupTouchControls();
 
   // Iniciar el loop del juego
-  gameInterval = setInterval(update, 80);
+  gameInterval = setInterval(update, 200
+  );
 }
 
 
