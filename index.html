@@ -2,19 +2,16 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Snake Game</title>
-  <style>
-    canvas {
-      background: #111;
-      display: block;
-      margin: 40px auto;
-      border: 2px solid #0f0;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <canvas id="gameCanvas" width="400" height="400"></canvas>
+  <div id="menu">
+    <h2>Selecciona dificultad</h2>
+    <button onclick="startGame('easy')">Fácil</button>
+    <button onclick="startGame('hard')">Difícil</button>
+  </div>
+  <canvas id="gameCanvas" width="800" height="800" style="display: none;"></canvas>
   <script src="game.js"></script>
 </body>
 </html>
