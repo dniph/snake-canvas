@@ -54,32 +54,32 @@ function isMobile() {
 }
 
 function setupTouchControls() {
-//   if (isMobile()) {
-if (true) {
+  if (isMobile()) {
+// if (true) {
     document.getElementById('touch-controls').style.display = 'block';
 
-    document.getElementById('up').addEventListener('click', () => {
+    document.getElementById('up').addEventListener('touchstart', () => {
       if (dy === 0) {
         dx = 0;
         dy = -box;
       }
     });
 
-    document.getElementById('down').addEventListener('click', () => {
+    document.getElementById('down').addEventListener('touchstart', () => {
       if (dy === 0) {
         dx = 0;
         dy = box;
       }
     });
 
-    document.getElementById('left').addEventListener('click', () => {
+    document.getElementById('left').addEventListener('touchstart', () => {
       if (dx === 0) {
         dx = -box;
         dy = 0;
       }
     });
 
-    document.getElementById('right').addEventListener('click', () => {
+    document.getElementById('right').addEventListener('touchstart', () => {
       if (dx === 0) {
         dx = box;
         dy = 0;
