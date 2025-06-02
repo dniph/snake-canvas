@@ -39,4 +39,20 @@ canvas {
   box-shadow: 0 0 10px #4caf50;
 }
 
+/* Controles tactiles  */
+#touch-controls {
+  margin-top: 20px;
+  display: none; /* Se activa solo en móviles */
+}
 
+#touch-controls button {
+  background-color: #222;
+  color: white;
+  font-size: 2em;
+  padding: 15px 20px;
+  margin: 5px;
+  border: 2px solid #4caf50;
+  border-radius: 10px;
+  width: 60px;
+  height: 60px;
+}

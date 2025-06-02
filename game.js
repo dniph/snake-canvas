@@ -15,6 +15,7 @@ function startGame(selectedDifficulty) {
   canvas.style.display = "block";
 
   difficulty = selectedDifficulty;
+  setupTouchControls();
 
   // Inicializar valores del juego
   snake = [{ x: 10 * box, y: 10 * box }];
@@ -32,6 +33,7 @@ function startGame(selectedDifficulty) {
   gameInterval = setInterval(update, 80);
 }
 
+
 function changeDirection(e) {
   if (e.key === "ArrowUp" && dy === 0) {
     dx = 0; dy = -box;
@@ -41,6 +43,45 @@ function changeDirection(e) {
     dx = -box; dy = 0;
   } else if (e.key === "ArrowRight" && dx === 0) {
     dx = box; dy = 0;
+  }
+}
+
+function isMobile() {
+  return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+}
+
+function setupTouchControls() {
+//   if (isMobile()) {
+if (true) {
+    document.getElementById('touch-controls').style.display = 'block';
+
+    document.getElementById('up').addEventListener('click', () => {
+      if (dy === 0) {
+        dx = 0;
+        dy = -box;
+      }
+    });
+
+    document.getElementById('down').addEventListener('click', () => {
+      if (dy === 0) {
+        dx = 0;
+        dy = box;
+      }
+    });
+
+    document.getElementById('left').addEventListener('click', () => {
+      if (dx === 0) {
+        dx = -box;
+        dy = 0;
+      }
+    });
+
+    document.getElementById('right').addEventListener('click', () => {
+      if (dx === 0) {
+        dx = box;
+        dy = 0;
+      }
+    });
   }
 }
 
