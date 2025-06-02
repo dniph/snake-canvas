@@ -15,7 +15,7 @@ function startGame(selectedDifficulty) {
   canvas.style.display = "block";
 
   difficulty = selectedDifficulty;
-  setupTouchControls();
+  
 
   // Inicializar valores del juego
   snake = [{ x: 10 * box, y: 10 * box }];
@@ -28,6 +28,8 @@ function startGame(selectedDifficulty) {
   };
 
   document.addEventListener("keydown", changeDirection);
+
+  setupTouchControls();
 
   // Iniciar el loop del juego
   gameInterval = setInterval(update, 80);
