@@ -58,33 +58,37 @@ function setupTouchControls() {
 // if (true) {
     document.getElementById('touch-controls').style.display = 'block';
 
-    document.getElementById('up').addEventListener('touchstart', () => {
+    document.getElementById('up').addEventListener('touchstart', (e) => {
+    e.preventDefault();
       if (dy === 0) {
         dx = 0;
         dy = -box;
       }
-    });
+    }, { passive: false }); // <---- importante para que funcione `preventDefault`
 
-    document.getElementById('down').addEventListener('touchstart', () => {
+    document.getElementById('down').addEventListener('touchstart', (e) => {
+    e.preventDefault();
       if (dy === 0) {
         dx = 0;
         dy = box;
       }
-    });
+    }, { passive: false }); // <---- importante para que funcione `preventDefault`
 
-    document.getElementById('left').addEventListener('touchstart', () => {
+    document.getElementById('left').addEventListener('touchstart', (e) => {
+    e.preventDefault();
       if (dx === 0) {
         dx = -box;
         dy = 0;
       }
-    });
+    }, { passive: false }); // <---- importante para que funcione `preventDefault`
 
-    document.getElementById('right').addEventListener('touchstart', () => {
+    document.getElementById('right').addEventListener('touchstart', (e) => {
+    e.preventDefault();
       if (dx === 0) {
         dx = box;
         dy = 0;
       }
-    });
+    }, { passive: false }); // <---- importante para que funcione `preventDefault`
   }
 }
 
